@@ -1,96 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Pharma Supply Chain Design System - Professional Healthcare with Blockchain Aesthetics */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Light Theme - Clean Professional Pharma Look */
+    --background: 0 0% 98%;
+    --foreground: 210 50% 8%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 210 50% 8%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 210 50% 8%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - Professional Blue */
+    --primary: 210 65% 22%;
+    --primary-foreground: 0 0% 98%;
+    --primary-glow: 210 65% 35%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Clean Gray */
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 210 50% 8%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 210 15% 95%;
+    --muted-foreground: 210 15% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent - Healthcare Teal */
+    --accent: 190 80% 45%;
+    --accent-foreground: 0 0% 98%;
+    --accent-glow: 190 80% 60%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* System Colors */
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --success: 142 70% 45%;
+    --success-foreground: 0 0% 98%;
+    
+    --warning: 45 95% 50%;
+    --warning-foreground: 0 0% 8%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 210 20% 88%;
+    --input: 210 20% 94%;
+    --ring: 210 65% 22%;
 
-    --radius: 0.5rem;
+    /* Pharma-specific colors */
+    --pharma-blue: 210 65% 22%;
+    --pharma-teal: 190 80% 45%;
+    --pharma-red: 0 70% 55%;
+    --pharma-green: 142 70% 45%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-glow)));
+    --gradient-pharma: linear-gradient(135deg, hsl(var(--pharma-blue)), hsl(var(--pharma-teal)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--pharma-blue)) 0%, hsl(var(--pharma-teal)) 100%);
+    
+    /* Shadows */
+    --shadow-soft: 0 2px 8px -2px hsl(var(--primary) / 0.1);
+    --shadow-medium: 0 4px 16px -4px hsl(var(--primary) / 0.15);
+    --shadow-large: 0 8px 32px -8px hsl(var(--primary) / 0.2);
+    --shadow-glow: 0 0 20px hsl(var(--accent) / 0.3);
 
+    --radius: 0.75rem;
+
+    /* Sidebar Light Theme */
     --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
+    --sidebar-foreground: 210 50% 8%;
+    --sidebar-primary: 210 65% 22%;
     --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 210 15% 95%;
+    --sidebar-accent-foreground: 210 50% 8%;
+    --sidebar-border: 210 20% 88%;
+    --sidebar-ring: 210 65% 22%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark Theme - Futuristic Blockchain Look */
+    --background: 210 50% 3%;
+    --foreground: 210 15% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 210 45% 6%;
+    --card-foreground: 210 15% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 210 45% 6%;
+    --popover-foreground: 210 15% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    /* Primary - Bright Teal for Dark Mode */
+    --primary: 190 80% 60%;
+    --primary-foreground: 210 50% 3%;
+    --primary-glow: 190 80% 75%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    /* Secondary - Dark Gray */
+    --secondary: 210 35% 12%;
+    --secondary-foreground: 210 15% 85%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 210 35% 8%;
+    --muted-foreground: 210 15% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    /* Accent - Electric Blue */
+    --accent: 210 80% 65%;
+    --accent-foreground: 210 50% 3%;
+    --accent-glow: 210 80% 80%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    /* System Colors - Darker */
+    --destructive: 0 70% 65%;
+    --destructive-foreground: 210 50% 3%;
+    
+    --success: 142 70% 55%;
+    --success-foreground: 210 50% 3%;
+    
+    --warning: 45 85% 60%;
+    --warning-foreground: 210 50% 3%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 210 35% 15%;
+    --input: 210 35% 12%;
+    --ring: 190 80% 60%;
+
+    /* Pharma-specific colors - Dark Mode */
+    --pharma-blue: 210 80% 65%;
+    --pharma-teal: 190 80% 60%;
+    --pharma-red: 0 70% 65%;
+    --pharma-green: 142 70% 55%;
+    
+    /* Gradients - Dark Mode */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-glow)));
+    --gradient-pharma: linear-gradient(135deg, hsl(var(--pharma-teal)), hsl(var(--pharma-blue)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--pharma-teal)) 0%, hsl(var(--pharma-blue)) 100%);
+    
+    /* Shadows - Glowing for Dark Mode */
+    --shadow-soft: 0 2px 8px -2px hsl(var(--primary) / 0.2);
+    --shadow-medium: 0 4px 16px -4px hsl(var(--primary) / 0.25);
+    --shadow-large: 0 8px 32px -8px hsl(var(--primary) / 0.3);
+    --shadow-glow: 0 0 20px hsl(var(--accent) / 0.4);
+
+    /* Sidebar Dark Theme */
+    --sidebar-background: 210 45% 4%;
+    --sidebar-foreground: 210 15% 85%;
+    --sidebar-primary: 190 80% 60%;
+    --sidebar-primary-foreground: 210 50% 3%;
+    --sidebar-accent: 210 35% 8%;
+    --sidebar-accent-foreground: 210 15% 85%;
+    --sidebar-border: 210 35% 12%;
+    --sidebar-ring: 190 80% 60%;
   }
 }
 
@@ -100,6 +158,33 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-inter;
+  }
+}
+
+@layer components {
+  /* Pharma-specific utility classes */
+  .pharma-gradient {
+    background: var(--gradient-pharma);
+  }
+  
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+  
+  .shadow-pharma {
+    box-shadow: var(--shadow-medium);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .blockchain-card {
+    @apply bg-card border border-border/50 rounded-2xl shadow-pharma backdrop-blur-sm;
+  }
+  
+  .pharma-badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-accent/10 text-accent border border-accent/20;
   }
 }
